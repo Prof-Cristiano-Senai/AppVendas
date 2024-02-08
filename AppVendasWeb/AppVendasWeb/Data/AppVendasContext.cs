@@ -8,10 +8,14 @@ namespace AppVendasWeb.Data
         public AppVendasContext(DbContextOptions<AppVendasContext> options) : base(options) { }
 
         public DbSet<Cliente> Cliente { get; set; }
+        public DbSet<Categoria> Categorias { get; set; }
+        public DbSet<Produto> Produtos { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Cliente>().ToTable("Cliente");
+            modelBuilder.Entity<Categoria>().ToTable("Categoria");
+            modelBuilder.Entity<Produto>().ToTable("Produto");
         }
     }
 
