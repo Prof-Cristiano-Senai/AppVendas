@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AppVendasWeb.Migrations
 {
     [DbContext(typeof(AppVendasContext))]
-    [Migration("20240208193344_AddItensDaVenda")]
-    partial class AddItensDaVenda
+    [Migration("20240209025757_IniciarTabelas")]
+    partial class IniciarTabelas
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
