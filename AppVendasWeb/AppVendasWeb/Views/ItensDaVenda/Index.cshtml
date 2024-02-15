@@ -7,7 +7,7 @@
 <h1 class="display-5 text-light my-5">Itens das Vendas</h1>
 
 <p>
-    <a asp-action="Create" class="btn btn-lg btn-outline-light d-inline-flex align-items-center">
+    <a asp-action="Create" asp-route-id=@ViewData["VendaId"] class="btn btn-lg btn-outline-light d-inline-flex align-items-center">
         <svg class="me-3" bootstrap-icon="PlusLg" width="20" height="20" aria-label="Adicionar"></svg> Adicionar
     </a>
 </p>
