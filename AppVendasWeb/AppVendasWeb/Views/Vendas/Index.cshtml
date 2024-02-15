@@ -46,11 +46,15 @@
                     @Html.DisplayFor(modelItem => item.Cliente.CPF)
                 </td>
                 <td class="text-end">
+
+                    <a class="text-decoration-none link-light btn btn-outline-light"
+                       asp-controller="ItensDaVenda" asp-action="Create" asp-route-id="@item.VendaId">
+                        <svg class="mx-1" bootstrap-icon="PlusLg" width="20" height="20" aria-label="Adicionar"></svg>
+                        Novo Item
+                    </a>
+
                     <a class="text-decoration-none link-light" asp-action="Edit" asp-route-id="@item.VendaId">
                         <svg class="mx-2" bootstrap-icon="PencilFill" width="16" height="16" aria-label="Editar"></svg>
-                    </a>
-                    <a class="text-decoration-none link-light" asp-action="Details" asp-route-id="@item.VendaId">
-                        <svg class="mx-2" bootstrap-icon="CardList" width="16" height="16" aria-label="Detalhes"></svg>
                     </a>
                     <a class="text-decoration-none link-light" asp-action="Delete" asp-route-id="@item.VendaId">
                         <svg class="mx-2" bootstrap-icon="Trash" width="16" height="16" aria-label="Excluir"></svg>
