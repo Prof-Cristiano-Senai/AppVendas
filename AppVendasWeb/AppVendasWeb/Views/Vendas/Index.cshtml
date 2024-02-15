@@ -43,14 +43,14 @@
                     @Html.DisplayFor(modelItem => item.NotaFiscal)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Cliente.CPF)
+                    @Html.DisplayFor(modelItem => item.Cliente.ClienteNome)
                 </td>
                 <td class="text-end">
 
                     <a class="text-decoration-none link-light btn btn-outline-light"
-                       asp-controller="ItensDaVenda" asp-action="Create" asp-route-id="@item.VendaId">
+                       asp-controller="ItensDaVenda" asp-action="Index" asp-route-id="@item.VendaId">
                         <svg class="mx-1" bootstrap-icon="PlusLg" width="20" height="20" aria-label="Adicionar"></svg>
-                        Novo Item
+                        Produtos
                     </a>
 
                     <a class="text-decoration-none link-light" asp-action="Edit" asp-route-id="@item.VendaId">
