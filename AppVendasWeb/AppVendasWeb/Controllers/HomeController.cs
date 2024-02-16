@@ -75,7 +75,7 @@ namespace AppVendasWeb.Controllers
 
             if (novaVenda.ClienteId.ToString() == "00000000-0000-0000-0000-000000000000")
             {
-                return View("IniciarVenda");
+                return RedirectToAction("IniciarVenda");
             }
 
             novaVenda.NovaVendaId = Guid.NewGuid();
