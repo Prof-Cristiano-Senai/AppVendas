@@ -1,39 +1,15 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "App Vendas";
 }
 
 <div class="text-center">
-    <h1 class="display-4 tituloPagina">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4 mt-5">App Vendas Web </h1>
+    <p class="lead mt-3 mb-5">Bem vindo ao sistema de vendas online</p>
+    <a asp-controller="Home" asp-action="IniciarVenda" class="btn btn-lg btn-outline-light p-5 ">
+        <svg bootstrap-icon="CartPlusFill" width="32" height="32" aria-label="Vendas" class="mb-3"></svg>
+        <br />Iniciar Venda
+    </a>
 </div>
 
-<hr class="my-3" />
-<br />
-<h3>Janela Modal</h3>
-
-
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    Exemplo de janela modal, centralizada,com scroll e estatica
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" data-bs-backdrop="static" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                .........................................................
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-        </div>
-    </div>
-</div>
 
 

@@ -28,6 +28,15 @@ namespace AppVendasWeb.Controllers
             return View(await appVendasContext.ToListAsync());
         }
 
+        // criar action para no momento do onchange do select de produtos seja atualizado o valor do produto
+        public JsonResult GetProduto(Guid id)
+        {
+            var produto = _context.Produtos.Where(p => p.ProdutoId == id).FirstOrDefault();
+            return Json(produto);
+        }
+
+
+
         // GET: ItensDaVenda/Details/5
         public async Task<IActionResult> Details(Guid? id)
         {
@@ -55,6 +64,8 @@ namespace AppVendasWeb.Controllers
             ViewData["VendaId"] = new SelectList(_context.Vendas.Where(i => i.VendaId == id), "VendaId", "NotaFiscal");
             return View();
         }
+
+
 
         // POST: ItensDaVenda/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.

@@ -11,6 +11,8 @@ namespace AppVendasWeb.Data
         public DbSet<Categoria> Categorias { get; set; }
         public DbSet<Produto> Produtos { get; set; }
         public DbSet<Venda> Vendas { get; set; }
+
+        public DbSet<NovaVenda> NovaVendas { get; set; }
         public DbSet<ItemDaVenda> ItensDaVenda { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -19,6 +21,7 @@ namespace AppVendasWeb.Data
             modelBuilder.Entity<Categoria>().ToTable("Categoria");
             modelBuilder.Entity<Produto>().ToTable("Produto");
             modelBuilder.Entity<Venda>().ToTable("Venda");
+            modelBuilder.Entity<NovaVenda>().ToTable("NovaVenda");
             modelBuilder.Entity<ItemDaVenda>().ToTable("ItemDaVenda");
         }
     }

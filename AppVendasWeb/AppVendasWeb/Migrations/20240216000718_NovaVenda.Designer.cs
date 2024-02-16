@@ -4,6 +4,7 @@ using AppVendasWeb.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AppVendasWeb.Migrations
 {
     [DbContext(typeof(AppVendasContext))]
-    partial class AppVendasContextModelSnapshot : ModelSnapshot
+    [Migration("20240216000718_NovaVenda")]
+    partial class NovaVenda
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -121,6 +124,9 @@ namespace AppVendasWeb.Migrations
                     b.Property<double>("PercentualDesconto")
                         .HasColumnType("float");
 
+                    b.Property<Guid>("ProdutoId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<double>("TotalDesconto")
                         .HasColumnType("float");
 
@@ -133,6 +139,8 @@ namespace AppVendasWeb.Migrations
                     b.HasKey("NovaVendaId");
 
                     b.HasIndex("ClienteId");
+
+                    b.HasIndex("ProdutoId");
 
                     b.ToTable("NovaVenda", (string)null);
                 });
@@ -213,7 +221,15 @@ namespace AppVendasWeb.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("AppVendasWeb.Models.Produto", "Produto")
+                        .WithMany()
+                        .HasForeignKey("ProdutoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Cliente");
+
+                    b.Navigation("Produto");
                 });
 
             modelBuilder.Entity("AppVendasWeb.Models.Produto", b =>
