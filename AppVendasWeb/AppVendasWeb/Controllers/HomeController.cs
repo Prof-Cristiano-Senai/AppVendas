@@ -60,6 +60,13 @@ namespace AppVendasWeb.Controllers
             return View("IniciarVenda");
         }
 
+        public IActionResult SalvarVenda()
+        {
+            // Lógica para salvar a venda
+
+            return View("IniciarVenda");
+        }
+
         public IActionResult Privacy()
         {
             return View();
